@@ -1,0 +1,15 @@
+ul {
+    list-style-type: none;
+  }
+ul li {
+    background: #eee;
+}
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+
+.close{
+    margin-right: 0;
+}
+/* sivani shalini */
