@@ -10,13 +10,18 @@ ul li {
     margin-left: 10px;
 }
 
-.list-group-item {
+/* .list-group-item {
   padding-left: 50px;
-}
+} */
 
 ul li:nth-child(odd) {
     background: #f9f9f9;
   }
+
+.btn-primary {
+  background-color: darkcyan;
+  border-color: darkcyan;
+}
 
 .close{
     float: right;
@@ -28,11 +33,17 @@ ul li:nth-child(odd) {
 }
 
 ul li.checked {
-  background: #888;
-  color: #fff;
+  background: #90EE90;
+  /* color: #fff; */
   text-decoration: line-through;
 }
 
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+  background-color: green;
+  border-color: green;
+}
+
+/* 
 ul li.checked::before {
   content: '';
   position: absolute;
@@ -42,15 +53,19 @@ ul li.checked::before {
   top: 12px;
   left: 26px;
   transform: rotate(45deg);
-  height: 25px;
+  height: 22px;
   width: 10px;
   margin-right: 10px;
-}
+} */
 
-ul li:hover {
+/* ul li:hover {
   background: #ddd;
   cursor: pointer;
-}
+} */
+
+input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+} 
 
 
 /* listDiv {

@@ -1,37 +1,37 @@
 function addTask(task){
     // alert(task);
     if(task !== undefined && task !== ""){
-        $(".taskList").append('<li class="list-group-item">'+task+'<button type="button" class="btn btn-default btn-sm close">x</button></li>');
+        var count = $(".taskList li").length+1;
+
+        $(".taskList").prepend('<li class="list-group-item"><div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="'+count+'" name="'+count+'" onclick="trigger('+count+')"><label class="custom-control-label" for="'+count+'">'+task+'</label><button type="button" class="btn btn-default btn-sm close">x</button></div></li>');
         $("#taskTextbox").val("");
         $(".close").click(function(){
-            $(this).parent().remove();
+            // $(this).parent().remove();
+            $(this).closest('.list-group-item').remove();
         });
-        // $('input[type="checkbox"]').click(function(){
-        //     if($(this).prop("checked") == true){
-        //         $(this).parent().css("text-decoration","line-through");
+
+        // $("li").click(function(){
+        //     if($(this).hasClass("checked")){
+        //         $(this).removeClass("checked");
         //     }
-        //     else if($(this).prop("checked") == false){
-        //         $(this).parent().css("text-decoration","none");
+        //     else{
+        //         $(this).addClass("checked");
         //     }
-        // });
-        $("li").click(function(){
-            if($(this).hasClass("checked")){
-                $(this).removeClass("checked");
-            }
-            else{
-                $(this).addClass("checked");
-            }
-            
-        })
+        // })
     }
 
 }
-// $(document).ready(function(){
-//     $(".closeButton").click(function(){
-//         // $(this).parent().remove();
-//         alert("close");
-//     });
-// });
+
+function trigger(id){
+    var checkbox = $("#"+id);
+    if(checkbox.prop("checked") == true){
+        checkbox.closest('li').addClass("checked");
+        checkbox.closest('li').appendTo($(".taskList"));
+    }
+    else if(checkbox.prop("checked") == false){
+        checkbox.closest('li').removeClass("checked");
+    }
+}
 
 $(document).ready(function(){
     $("#taskTextbox").keypress(function(e){
