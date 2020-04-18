@@ -15,7 +15,13 @@ function addTask(task){
         //     }
         // });
         $("li").click(function(){
-            $(this).addClass("checked");
+            if($(this).hasClass("checked")){
+                $(this).removeClass("checked");
+            }
+            else{
+                $(this).addClass("checked");
+            }
+            
         })
     }
 
