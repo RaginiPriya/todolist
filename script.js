@@ -1,6 +1,7 @@
 function addTask(task){
     // alert(task);
     if(task !== undefined && task !== ""){
+        $(".center").hide();
         var count = $(".taskList li").length+1;
 
         $(".taskList").prepend('<li class="list-group-item"><div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="'+count+'" name="'+count+'" onclick="trigger('+count+')"><label class="custom-control-label" for="'+count+'">'+task+'</label><button type="button" class="btn btn-default btn-sm close">x</button></div></li>');
@@ -8,6 +9,10 @@ function addTask(task){
         $(".close").click(function(){
             // $(this).parent().remove();
             $(this).closest('.list-group-item').remove();
+            if($(".taskList li").length == 0){
+                $(".center").show();
+            }
+
         });
 
         // $("li").click(function(){

@@ -11,24 +11,38 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h2 class="text-center mt-5">TO-DO LIST</h2>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#"><img src="task image.png" height="35px" width="35px" mb-1></a>
+        <a class="navbar-brand" href="#">TO-DO</a>
+    </nav>
+    <div class="container pt-50">
+        <!-- <h2 class="text-center mt-5">TO-DO LIST</h2> -->
         <!-- <div class="center-block col-lg-3">
             <input type="text">
         </div> -->
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="input-group mb-3 col-sm-6 mt-4">
-                <input type="text" class="form-control" id="taskTextbox" name="taskTextbox">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="button" onclick="addTask(taskTextbox.value)">Add task</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="input-group mb-3 col-sm-6 mt-4">
+                    <input type="text" class="form-control" id="taskTextbox" name="taskTextbox">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button" onclick="addTask(taskTextbox.value)">Add task</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class = "center">
+            <img src="enjoy-your-day-background_1271-219.jpg" width="300px" height="300px" class="noTask">
+            <p>No pending tasks for today!</p>
+        </div>
+        
         <div class="row">
             <div class="col-sm-3"></div>
             <ul class="col-sm-6 list-group taskList mt-2">
         </div>
+        
+
+        
         
         
     </div>
