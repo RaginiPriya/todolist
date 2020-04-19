@@ -94,6 +94,15 @@ ul li.checked::before {
   cursor: pointer;
 } */
 
+label{
+  word-wrap: break-word;
+  /* float: left; */
+  text-align:left; 
+  /* margin-right:30px; */
+  box-sizing: border-box;
+  display: inline;
+}
+
 input[type=checkbox]:checked + label {
   text-decoration: line-through;
 } 
